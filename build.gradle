@@ -1,6 +1,9 @@
 apply plugin: 'idea'
 apply from: 'publish.gradle'
 apply plugin: 'groovy'
+
+archivesBaseName = 'ida-gradle'
+
 dependencies {
     compile gradleApi()
     compile localGroovy()
