@@ -1,0 +1,19 @@
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+
+        repositories {
+            maven {
+                url "/srv/maven" // change to point to your repo, e.g. http://my.org/repo
+            }
+        }
+
+    }
+}
+
+group = "uk.gov.ida"
+version = "1.0.0-$System.env.BUILD_NUMBER"
