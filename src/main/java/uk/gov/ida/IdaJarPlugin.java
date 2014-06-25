@@ -37,7 +37,9 @@ public class IdaJarPlugin implements Plugin<Project> {
 
                     String build_number = System.getenv("BUILD_NUMBER");
                     String git_commit = System.getenv("GIT_COMMIT");
+                    String version_number = project.property("version").toString();
                     attributes.put("Build-Number", (build_number != null ? build_number : "" ));
+                    attributes.put("Version-Number", (version_number != null ? version_number : "" ));
                     attributes.put("Git-Commit", (git_commit != null ? git_commit : "" ));
 
                     TimeZone utcTimeZone = TimeZone.getTimeZone("UTC");
