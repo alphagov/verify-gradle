@@ -5,7 +5,7 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.sonar.runner.SonarRunnerPlugin;
 
-public class SonarPlugin implements org.gradle.api.Plugin<Project> {
+public class IdaSonarPlugin implements org.gradle.api.Plugin<Project> {
 
     private final String SONAR_HOST_URL = "http://sonar.ida.digital.cabinet-office.gov.uk:8888";
     private final String SONAR_JDBC_URL = "jdbc:postgresql://sonar.ida.digital.cabinet-office.gov.uk/sonar";
