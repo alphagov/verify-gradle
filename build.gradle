@@ -8,3 +8,6 @@ dependencies {
     compile gradleApi()
     compile localGroovy()
 }
+
+defaultTasks 'publishToMavenLocal'
+
