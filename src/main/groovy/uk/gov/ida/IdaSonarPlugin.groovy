@@ -10,6 +10,9 @@ class IdaSonarPlugin implements Plugin<Project> {
         this.project = project
 
 		project.apply plugin:'sonar-runner'
+		project.repositories {
+			mavenCentral()
+		}
         project.extensions.create("idaSonar", IdaSonarPluginExtension)
         project.sonarRunner {
 			sonarProperties {
@@ -33,8 +36,7 @@ class IdaSonarPlugin implements Plugin<Project> {
 				sonarProperties {
 					property 'sonar.sourceEncoding', 'UTF-8'
 					property 'sonar.jacoco.reportPath', "$buildDir/jacoco/test.exec"
-					property 'sonar.jacoco.itReportPath',
-							"${project.project(':integration-tests').buildDir.absolutePath}/jacoco/intTest.exec"
+					property 'sonar.jacoco.itReportPath', "$buildDir/jacoco/intTest.exec"
 				}
 			}
 		}
