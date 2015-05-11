@@ -11,7 +11,7 @@ class IdaSonarPlugin implements Plugin<Project> {
 
 		project.apply plugin:'sonar-runner'
 		project.repositories {
-			mavenCentral()
+			maven { url 'https://artifactory.ida.digital.cabinet-office.gov.uk/artifactory/whitelisted-repos' }
 		}
         project.extensions.create("idaSonar", IdaSonarPluginExtension)
         project.sonarRunner {
