@@ -26,7 +26,6 @@ class IdaSonarPlugin implements Plugin<Project> {
 				property 'sonar.login', 'admin'
 				property 'sonar.password', 'cup cream fair'
 				property 'sonar.core.codeCoveragePlugin', 'jacoco'
-                                property 'sonar.java.source', '1.8'
 			}
 		}
 
