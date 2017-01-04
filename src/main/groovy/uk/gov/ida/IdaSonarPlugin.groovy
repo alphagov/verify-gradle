@@ -9,7 +9,9 @@ class IdaSonarPlugin implements Plugin<Project> {
 	void apply(Project project) {
         this.project = project
 
-		project.apply plugin:'org.sonarqube'
+    project.plugins {
+      id "org.sonarqube" version "2.2.1"
+    }
 		project.repositories {
 			maven { url 'https://artifactory.ida.digital.cabinet-office.gov.uk/artifactory/whitelisted-repos' }
 		}

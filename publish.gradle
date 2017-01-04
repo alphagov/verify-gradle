@@ -6,13 +6,12 @@ publishing {
             artifactId 'ida-gradle'
             from components.java
         }
+    }
 
-        repositories {
-            maven {
-                url "/srv/maven" // change to point to your repo, e.g. http://my.org/repo
-            }
+    repositories {
+        maven {
+            url "/srv/maven" // change to point to your repo, e.g. http://my.org/repo
         }
-
     }
 }
 

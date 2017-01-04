@@ -1,7 +1,10 @@
+plugins {
+  id "org.sonarqube" version "2.2.1"
+}
+
 apply plugin: 'idea'
 apply from: 'publish.gradle'
 apply plugin: 'groovy'
-apply plugin: "org.sonarqube"
 
 archivesBaseName = 'ida-gradle'
 
