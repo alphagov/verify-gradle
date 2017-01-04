@@ -9,9 +9,6 @@ class IdaSonarPlugin implements Plugin<Project> {
 	void apply(Project project) {
         this.project = project
 
-    project.plugins {
-      id "org.sonarqube" version "2.2.1"
-    }
 		project.repositories {
 			maven { url 'https://artifactory.ida.digital.cabinet-office.gov.uk/artifactory/whitelisted-repos' }
 		}
@@ -30,8 +27,8 @@ class IdaSonarPlugin implements Plugin<Project> {
 		project.subprojects {
 			apply plugin: 'jacoco'
 
-			sonarRunner {
-				sonarProperties {
+			sonarqube {
+				properties {
 					property 'sonar.sourceEncoding', 'UTF-8'
 					property 'sonar.jacoco.reportPath', "$buildDir/jacoco/test.exec"
 					property 'sonar.jacoco.itReportPath', "$buildDir/jacoco/intTest.exec"
