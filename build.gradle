@@ -1,7 +1,7 @@
 apply plugin: 'idea'
 apply from: 'publish.gradle'
 apply plugin: 'groovy'
-apply plugin: "sonar-runner"
+apply plugin: "org.sonarqube"
 
 archivesBaseName = 'ida-gradle'
 

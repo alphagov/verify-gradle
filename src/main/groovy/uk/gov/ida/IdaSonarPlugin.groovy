@@ -9,24 +9,20 @@ class IdaSonarPlugin implements Plugin<Project> {
 	void apply(Project project) {
         this.project = project
 
-		project.apply plugin:'sonar-runner'
+		project.apply plugin:'org.sonarqube'
 		project.repositories {
 			maven { url 'https://artifactory.ida.digital.cabinet-office.gov.uk/artifactory/whitelisted-repos' }
 		}
-        project.extensions.create("idaSonar", IdaSonarPluginExtension)
-        project.sonarRunner {
-			sonarProperties {
-				property 'sonar.projectName', project.idaSonar.name
-				property 'sonar.projectKey', project.idaSonar.name
-				property 'sonar.host.url', 'http://sonar.ida.digital.cabinet-office.gov.uk:8888'
-				property 'sonar.jdbc.url', 'jdbc:postgresql://sonar.ida.digital.cabinet-office.gov.uk/sonar'
-				property 'sonar.jdbc.driverClassName', 'org.postgresql.Driver'
-				property 'sonar.jdbc.username', 'sonar'
-				property 'sonar.jdbc.password', 'holborn missing purple chimney'
-				property 'sonar.login', 'admin'
-				property 'sonar.password', 'cup cream fair'
-				property 'sonar.core.codeCoveragePlugin', 'jacoco'
-			}
+    project.extensions.create("idaSonar", IdaSonarPluginExtension)
+    project.sonarqube {
+      properties {
+        property 'sonar.projectName', project.idaSonar.name
+        property 'sonar.projectKey', project.idaSonar.name
+        property 'sonar.host.url', 'http://sonar.ida.digital.cabinet-office.gov.uk:8888'
+        property 'sonar.login', 'admin'
+        property 'sonar.password', 'cup cream fair'
+        property 'sonar.core.codeCoveragePlugin', 'jacoco'
+      }
 		}
 
 		project.subprojects {
@@ -42,8 +38,8 @@ class IdaSonarPlugin implements Plugin<Project> {
 		}
 
 		project.configure(skipSonarOnTheseProjects()) {
-			sonarRunner {
-                skipProject = true
+			sonarqube {
+        skipProject = true
 			}
 		}
 	}
