@@ -29,6 +29,12 @@ class IdaSonarPlugin implements Plugin<Project> {
 
 			sonarqube {
 				properties {
+          property 'sonar.projectName', project.idaSonar.name
+          property 'sonar.projectKey', project.idaSonar.name
+          property 'sonar.host.url', 'http://sonar.ida.digital.cabinet-office.gov.uk:8888'
+          property 'sonar.login', 'admin'
+          property 'sonar.password', 'cup cream fair'
+          property 'sonar.core.codeCoveragePlugin', 'jacoco'
 					property 'sonar.sourceEncoding', 'UTF-8'
 					property 'sonar.jacoco.reportPath', "$buildDir/jacoco/test.exec"
 					property 'sonar.jacoco.itReportPath', "$buildDir/jacoco/intTest.exec"
