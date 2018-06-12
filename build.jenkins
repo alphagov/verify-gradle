@@ -25,7 +25,7 @@ pipeline {
         BINTRAY_API_KEY = credentials('bintray-api-key')
       }
       steps {
-        sh './gradlew publish'
+        sh './gradlew publish bintrayUpload'
       }
     }
   }
