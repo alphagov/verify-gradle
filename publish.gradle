@@ -1,12 +1,13 @@
 apply plugin: 'maven-publish'
+apply plugin: 'java'
 
 def buildVersion = "1.1.0-${System.env.BUILD_NUMBER?:'SNAPSHOT'}"
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId 'ida-gradle'
             from components.java
+            artifactId 'ida-gradle'
         }
     }
 

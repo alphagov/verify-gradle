@@ -1,4 +1,4 @@
-plugins { id "com.jfrog.bintray" version "1.8.0" }
+plugins { id "com.jfrog.bintray" version "1.8.4" }
 apply plugin: 'idea'
 apply from: 'publish.gradle'
 apply plugin: 'groovy'
