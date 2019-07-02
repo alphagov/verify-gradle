@@ -1,0 +1,20 @@
+language: java
+env:
+  global:
+  - VERIFY_USE_PUBLIC_BINARIES=true
+  # GITHUB_PAT
+  - secure: "imuYgcceehUVjF5tQ2SXtQXc7VqhvTT2yTaEyx3wE/V+tKGkk4Y7h/dI8Jie5L507ogrKWzZFz95DCn6teEdymHSd+ZTMoDN7izBs17eJ3YU2P5VNyTjjlF1cpZZepe94mRTYj4/MyclQM87FzFaBd1662KJY1WhO3rC0/PrMAVoqGnsVZed50VXemztl/fkdroPGzwRH6eMV2CZ1QWHyWNyQbdnqc6lpgdC1SYTiHX2CmUrud95zCRJyTKV52XDckINvNbIqUW7fkxpKt9gZiSgVeW1jmYb8RI0SvOp0DjFtesZzYFkAB36hB582qjsdG7a8qzM/Zc0f5hpUf2mpOZI2LH84XiDTIstigvSX0UZVt5DmzBzJMMKPfr+hy8glVvihPWdr/JDm72TjnTqJFLTTXGSWW8vvlIVEdjwwnZOFP11GU6WMzGswJEW5IqtuPeclL16CHdjhF6oQDL0DFGlYTDtlXMApwHmS0tKc1d6qENSy4FihapIXWehv2WwVCvyu/OxPMC4nUHnZZlsRsmcAeevfwegyyxDVwQhLzs9mVm11vSDlLfM2QzbRpUthLqfmsbLvhvdx0d2dzxuDgblwpujBGzJI2khvo/a34s79WDbIN2rZ9deFuiR0i6DOusJU2Iivp30AYXVqD1KyIxrH2JyVtWDaV6LwXXXQ2s="
+
+jdk:
+- openjdk11
+- openjdk8
+matrix:
+before_install:
+- sudo apt-get install jq
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+  - $HOME/.gradle/caches/
+  - $HOME/.gradle/wrapper/
