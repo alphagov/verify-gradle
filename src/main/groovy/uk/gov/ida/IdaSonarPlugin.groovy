@@ -10,7 +10,7 @@ class IdaSonarPlugin implements Plugin<Project> {
         this.project = project
 
 		project.repositories {
-			maven { url 'https://artifactory.ida.digital.cabinet-office.gov.uk/artifactory/whitelisted-repos' }
+			maven { url 'https://gds.jfrog.io/artifactory/whitelisted-repos' }
 		}
     project.extensions.create("idaSonar", IdaSonarPluginExtension)
     project.sonarqube {
