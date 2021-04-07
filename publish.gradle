@@ -15,7 +15,7 @@ publishing {
             pom {
                 name = 'Verify Gradle'
                 packaging = 'jar'
-                description = 'Library for various SAML testing utility operations.'
+                description = 'This project contains gradle plugins authored by the GOV.UK Verify team.'
                 url = 'https://github.com/alphagov/verify-gradle'
                 artifactId = 'verify-gradle'
 

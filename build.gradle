@@ -18,7 +18,3 @@ java {
     withJavadocJar()
     withSourcesJar()
 }
-
-repositories {
-    maven { url 'https://gds.jfrog.io/artifactory/allowed-repos' }
-}
