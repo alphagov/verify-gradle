@@ -1,6 +1,10 @@
 verify-gradle
 =============
 
+>**GOV.UK Verify has closed**
+>
+>This repository is out of date and has been archived
+
 This project contains gradle plugins authored by the GOV.UK Verify team.
 
 These plugins are tightly coupled to the rest of Verify's codebase and are not
